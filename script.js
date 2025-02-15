@@ -23,7 +23,7 @@ const loadingAnim = lottie.loadAnimation({
   renderer: 'svg',
   loop: true,
   autoplay: true,
-  path: 'assets/lottie/loading-charkha.json'
+  path: 'assets/lottie/loading-animation.json'
 });
 
 const fabricFlowAnim = lottie.loadAnimation({
