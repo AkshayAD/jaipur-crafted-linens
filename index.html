@@ -1,115 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jaipur Crafted Linens | Premium Hand-Block Printed Linens</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaipur Crafted Linens | Luxury Hand-Block Printed Linens</title>
+    <meta name="description" content="Premium Jaipuri block printed bedsheets & rajais, ethically crafted using 500-year-old techniques">
+    
+    <!-- Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
+
 <body>
-  <!-- Header -->
-  <header class="main-header">
-    <div class="container">
-      <h1 class="logo">Jaipur Crafted Linens</h1>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#products">Collection</a></li>
-          <li><a href="#artisans">Artisans</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#instagram" class="ig-cta">Order via Instagram</a></li>
-        </ul>
-      </nav>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div id="loading-animation"></div>
     </div>
-  </header>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero-section">
-    <video class="hero-video" autoplay muted loop>
-      <source src="assets/videos/hero-video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="hero-content">
-      <h2>500 Years of Block Printing Heritage</h2>
-      <p>Eco-friendly • Natural Dyes • Fair Trade Certified</p>
-      <a href="https://www.instagram.com/Chachad_divyanka/" target="_blank" class="cta-button">
-        <i class="fab fa-instagram"></i> DM to Order
-      </a>
-    </div>
-  </section>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
 
-  <!-- Product Carousel -->
-  <section id="products" class="product-section">
-    <div class="container">
-      <h3>Our Best Sellers</h3>
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="assets/images/product1.jpg" alt="Product 1">
-            <div class="product-info">
-              <h4>Block Print Rajai Sets</h4>
-              <p>Winter-weight cotton filled with organic kapok</p>
-              <a href="#" class="cta-button">View Details</a>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo">Jaipur Crafted Linens</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#hero" class="nav-link">Home</a></li>
+                    <li><a href="#products" class="nav-link">Collection</a></li>
+                    <li><a href="#process" class="nav-link">Process</a></li>
+                    <li><a href="#artisans" class="nav-link">Artisans</a></li>
+                    <li><a href="https://www.instagram.com/yourhandle" target="_blank" class="ig-cta">
+                        <i class="fab fa-instagram"></i> Order
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="assets/videos/hero-loop.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h2 class="hero-title">Heritage Woven in Every Thread</h2>
+            <div class="lottie-container" id="fabric-flow-animation"></div>
+            <a href="#products" class="cta-button">
+                Explore Collection <i class="fas fa-arrow-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Products Carousel -->
+    <section id="products" class="product-section">
+        <div class="container">
+            <h3 class="section-title">The Artisan Collection</h3>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="assets/images/products/rajai-set-sand.webp" alt="Sand Colored Rajai Set">
+                        <div class="product-info">
+                            <h4>Desert Bloom Rajai</h4>
+                            <p>Hand-filled with organic cotton</p>
+                            <span class="price">₹12,999</span>
+                        </div>
+                    </div>
+                    <!-- Add more slides -->
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
-          </div>
-          <!-- Add more slides -->
         </div>
-        <div class="swiper-pagination"></div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Artisan Stories -->
-  <section id="artisans" class="artisan-section">
-    <div class="container">
-      <h3>Meet Our Master Craftsmen</h3>
-      <div class="artisan-grid">
-        <div class="artisan-card">
-          <img src="assets/images/artisan1.jpg" alt="Artisan 1">
-          <div class="artisan-details">
-            <h4>Ramesh Sharma</h4>
-            <p>3rd Generation Block Carving Expert</p>
-          </div>
+    <!-- Craft Process -->
+    <section id="process" class="process-section">
+        <div class="container">
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="lottie-container" id="block-carving-animation"></div>
+                    <h4>Block Carving</h4>
+                    <p>20-day intricate pattern creation</p>
+                </div>
+                <!-- Add more process steps -->
+            </div>
         </div>
-        <!-- Add more artisan cards -->
-      </div>
-    </div>
-  </section>
-<div id="lottie-container" data-animation-path="lottie/spinning-charkha.json"></div>
-  <!-- Newsletter Section -->
-  <section id="newsletter" class="newsletter-section">
-    <div class="container">
-      <h3>Join Our Community</h3>
-      <p>Get 10% off your first order</p>
-      <form class="newsletter-form">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit" class="cta-button">Subscribe</button>
-      </form>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="main-footer">
-    <div class="container">
-      <p>© 2023 Jaipur Crafted Linens</p>
-      <div class="social-links">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-pinterest"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-      </div>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>Craftsmanship</h5>
+                    <ul>
+                        <li><a href="#process">Our Process</a></li>
+                        <li><a href="#artisans">Artisan Stories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Connect</h5>
+                    <a href="https://instagram.com/yourhandle" class="social-link">
+                        <img src="assets/icons/instagram.svg" alt="Instagram">
+                        @yourhandle
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
-  <script src="animations.js"></script>
-  <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="animations.js"></script>
+    <script src="particles-config.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
