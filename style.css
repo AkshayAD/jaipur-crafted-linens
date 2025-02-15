@@ -93,3 +93,42 @@
   z-index: 9999;
   mix-blend-mode: difference;
 }
+/* Lottie Containers */
+.lottie-container {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#hero-decoration-animation {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  opacity: 0.1;
+}
+
+#block-print-process-animation {
+  width: 400px;
+  height: 400px;
+  right: -50px;
+  bottom: -100px;
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--sand);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading-animation {
+  width: 150px;
+  height: 150px;
+}
