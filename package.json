@@ -1,7 +1,7 @@
 {
   "name": "jaipur-crafted-linens",
   "version": "1.0.0",
-  "description": "Premium e-commerce website for Jaipur Crafted Linens",
+  "description": "Award-worthy, advanced e-commerce website for Jaipur Crafted Linens.",
   "main": "index.html",
   "scripts": {
     "start": "live-server --port=8080",
