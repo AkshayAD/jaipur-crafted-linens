@@ -1,83 +1,14 @@
 
 
-/* Warm color palette and improved body styles */
-body {
-          font-family: 'Arial', sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: #f8f0e3; /* Light beige background */
-    color: #5e3a27; /* Brown text for warmth */
-}
-
-/* Header adjustments */
-header {
-          background-color: #e6d5b8; /* Light warm beige header */
-    padding: 20px 0;
-          text-align: center;
-          border-bottom: 2px solid #d0c0a1; /* Stronger light brown border */
-}
-
-header h1 {
-          margin: 0;
-          color: #8c5a3d; /* Deeper brown title color */
-}
-
-/* Navigation enhancements */
-nav ul {
-          padding: 0;
-          list-style: none;
-          text-align: center; /* Center navigation links */
-}
-
-nav ul li {
-          display: inline;
-          margin: 0 20px;
-}
-
-nav a {
-          text-decoration: none;
-          color: #a36f4b; /* More prominent brown nav link color */
-    font-weight: bold;
-          padding: 10px 15px;
-          border-radius: 5px; /* Rounded corners for links */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-}
-
-nav a:hover {
-          background-color: #d0c0a1; /* Light brown hover background */
-}
-
-/* Main content styling */
-main {
-          padding: 20px;
-          max-width: 1200px; /* Limit main content width for larger screens */
-    margin: 20px auto; /* Center main content on page */
-}
-
-/* Responsive design using media queries */
-
-/* For tablets and larger screens */
-@media (min-width: 768px) {
-          header {
-                        padding: 30px 0;
-          }
-          nav ul li {
-                        margin: 0 30px;
-          }
-          main {
-                        padding: 30px;
-          }
-}
-
-/* For larger desktops */
-@media (min-width: 1200px) {
-          header h1 {
-                        font-size: 2.5em;
-          }
-          nav a {
-                        font-size: 1.1em;
-          }
-          main {
-                        padding: 40px;
-          }
+/* Responsive adjustments for mobile */
+@media screen and (max-width: 768px) {
+            body {
+                          font-size: 16px; /* Adjust font size for mobile */
+            }
+            header {
+                          padding: 10px 0; /* Reduce header padding for mobile */
+            }
+            nav ul li {
+                          margin: 0 10px; /* Reduce nav link spacing for mobile */
+            }
 }
