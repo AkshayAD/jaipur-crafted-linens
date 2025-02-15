@@ -1,0 +1,100 @@
+body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f0e3; /* Beige background */
+    color: #333; /* Dark grey text */
+}
+
+header {
+      background-color: #e6d5b8; /* Light beige header */
+    padding: 20px 0;
+      text-align: center;
+      border-bottom: 1px solid #d0c0a1; /* Light brown border */
+}
+
+header h1 {
+      margin: 0;
+      color: #5e3a27; /* Brown title color */
+}
+
+nav ul {
+      padding: 0;
+      list-style: none;
+}
+
+nav ul li {
+      display: inline;
+      margin: 0 15px;
+}
+
+nav a {
+      text-decoration: none;
+      color: #7a543d; /* Brown navigation link color */
+    font-weight: bold;
+}
+
+main {
+      padding: 20px;
+}
+
+#hero {
+      background-color: #fff; /* White hero section background */
+    padding: 40px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+}
+
+#hero h2 {
+      color: #5e3a27; /* Brown hero title color */
+    margin-bottom: 10px;
+}
+
+.cta-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #d4ac0d; /* Gold CTA button color */
+    color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+}
+
+#products, #artisans, #instagram {
+      background-color: #fff; /* White section background */
+    padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+}
+
+#products h3, #artisans h3, #instagram h3 {
+      color: #5e3a27; /* Brown section title color */
+}
+
+footer {
+      background-color: #e6d5b8; /* Light beige footer */
+    text-align: center;
+      padding: 10px 0;
+      border-top: 1px solid #d0c0a1; /* Light brown border */
+    color: #7a543d; /* Brown footer text color */
+    position: fixed; /* Fixed footer */
+    bottom: 0;
+      width: 100%;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+      header {
+                padding: 10px 0;
+      }
+      nav ul li {
+                display: block;
+                margin: 10px 0;
+      }
+      #hero {
+                padding: 20px;
+      }
+}
