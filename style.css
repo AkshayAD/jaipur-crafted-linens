@@ -1,3 +1,4 @@
+/* Add this to your existing CSS */
 :root {
   --terracotta: #9E4A3D;
   --indigo: #2A4B7C;
@@ -6,21 +7,6 @@
   --text-dark: #2A2A2A;
   --text-light: #F9F7F3;
   --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--text-dark);
-  background: var(--sand);
-  overflow-x: hidden;
 }
 
 /* Loading Screen */
