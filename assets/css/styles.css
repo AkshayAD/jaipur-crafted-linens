@@ -1,0 +1,292 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', serif;
+  margin: 0 0 1rem;
+}
+
+/* Color Palette */
+:root {
+  --terracotta: #E07A5F;
+  --indigo-blue: #3D405B;
+  --sandy-beige: #F4F1DE;
+}
+
+/* Navigation & Header */
+header {
+  background-color: var(--indigo-blue);
+  padding: 1rem;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.social-icons a img {
+  width: 24px;
+  height: 24px;
+  margin-left: 0.5rem;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: 80vh;
+}
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+.hero-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.hero-overlay p {
+  font-size: 1.25rem;
+}
+
+/* Lottie Animation Container */
+.lottie-animation {
+  width: 150px;
+  height: 150px;
+  margin-top: 1rem;
+}
+
+/* Featured Carousel */
+.featured-carousel {
+  padding: 2rem;
+  background-color: var(--sandy-beige);
+  background-image: url('../images/patterns/traditional-motif-1.webp');
+  background-repeat: repeat;
+}
+.featured-carousel h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+.carousel-item {
+  flex: 0 0 auto;
+  transition: transform 0.3s ease;
+}
+.carousel-item img {
+  max-width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+.carousel-item:hover {
+  transform: scale(1.05);
+}
+
+/* Newsletter */
+.newsletter {
+  background-color: var(--terracotta);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+.newsletter form {
+  margin-top: 1rem;
+  display: inline-flex;
+}
+.newsletter input[type="email"] {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  min-width: 250px;
+}
+.newsletter button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  background-color: var(--indigo-blue);
+  color: white;
+  cursor: pointer;
+}
+
+/* Instagram Feed */
+.instagram-feed {
+  padding: 2rem;
+  text-align: center;
+}
+.instagram-feed h2 {
+  margin-bottom: 1rem;
+}
+
+/* Product Page Styles */
+.product-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--sandy-beige);
+}
+.product-gallery .high-res-image,
+.product-gallery .zoom-view,
+.product-gallery .product-360 {
+  flex: 1 1 300px;
+}
+.product-gallery .high-res-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+.product-details, .meet-artisan, .size-guide, .pricing-shipping, .instagram-order {
+  padding: 2rem;
+}
+.product-details h1 {
+  margin-bottom: 0.5rem;
+}
+.product-details .price {
+  color: var(--terracotta);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Meet the Artisan Section */
+.meet-artisan {
+  background-color: #fff;
+}
+.artisan-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+.artisan-info img {
+  max-width: 300px;
+  border-radius: 8px;
+}
+.artisan-details {
+  flex: 1;
+}
+.artisan-video {
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+/* Size Guide Table */
+.size-guide table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.size-guide th, .size-guide td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+/* Pricing & Shipping */
+.pricing-shipping p {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Instagram Order Section */
+.instagram-order a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  background-color: var(--indigo-blue);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+.instagram-order a:hover {
+  background-color: var(--terracotta);
+}
+.instagram-order img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Footer */
+footer {
+  background-color: var(--indigo-blue);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-icons {
+  margin-top: 0.5rem;
+}
+.footer-icons a img {
+  width: 24px;
+  height: 24px;
+  margin: 0 0.5rem;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 768px) {
+  .hero-overlay h1 {
+    font-size: 3rem;
+  }
+  .hero-overlay p {
+    font-size: 1.5rem;
+  }
+  nav ul {
+    gap: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .product-gallery {
+    gap: 3rem;
+  }
+  .artisan-info {
+    flex-wrap: nowrap;
+  }
+}
+@media (min-width: 1440px) {
+  .hero-overlay h1 {
+    font-size: 3.5rem;
+  }
+}
