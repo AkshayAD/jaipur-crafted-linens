@@ -1,69 +1,59 @@
-/* Global Box Sizing */
+/* Base Reset & Box Sizing */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Base Styles */
-body {
-  margin: 0;
-  font-size: 16px;
-  font-family: 'Lato', Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #fff;
+/* Color Palette from the Screenshot */
+:root {
+  --hero-bg: #6d6d6d;            /* Gray hero background */
+  --cream-bg: #f6f4f0;           /* Cream/off-white sections */
+  --text-dark: #333333;          /* Dark text */
+  --text-light: #ffffff;         /* Light text */
+  --btn-primary-bg: #f68666;     /* Warm coral/salmon */
+  --btn-secondary-bg: #333333;   /* Dark gray */
+  --header-bg: #333333;          /* Dark header background */
+  --max-width: 1200px;
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
-  margin: 0 0 1rem;
+body {
+  font-family: 'Lato', Arial, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--cream-bg);
+  line-height: 1.6;
 }
 
-/* Refined Rajasthani Color Palette */
-:root {
-  --primary-blue: #2A4D69;      /* Deep, calming blue */
-  --muted-terracotta: #D1495B;  /* Warm terracotta */
-  --sandy-beige: #EDC9AF;       /* Soft, sandy beige */
-  --accent-saffron: #F4A261;    /* Subtle saffron accent */
-  --max-width: 1200px;          /* Container max-width */
+/* Header / Nav */
+.site-header {
+  background-color: var(--header-bg);
+  padding: 1rem 0;
 }
-
-/* Layout Containers */
-.container {
+.nav {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-/* Navigation & Header */
-header {
-  background-color: var(--primary-blue);
-  padding: 1rem;
-}
-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1rem;
 }
 .nav-links {
   list-style: none;
   display: flex;
   gap: 1.5rem;
-  margin: 0;
-  padding: 0;
 }
 .nav-links a {
-  color: #fff;
+  color: var(--text-light);
   text-decoration: none;
   font-weight: 700;
-  transition: color 0.3s ease;
 }
 .nav-links a:hover {
-  color: var(--accent-saffron);
+  opacity: 0.8;
 }
-.social-icons a img {
+.social-icons img {
   width: 24px;
   height: 24px;
   margin-left: 0.5rem;
@@ -71,279 +61,163 @@ nav {
 }
 
 /* Hero Section */
-.hero {
+.hero-section {
+  background-color: var(--hero-bg);
   position: relative;
-  overflow: hidden;
-  height: 100vh; /* Make hero fill the screen for a bold statement */
-}
-.hero-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(42, 77, 105, 0.5); /* Semi-transparent overlay */
+  height: 60vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem;
-  color: #fff;
+}
+.hero-overlay {
+  color: var(--text-light);
+  padding: 1rem;
 }
 .hero-overlay h1 {
-  font-size: 3rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 .hero-overlay p {
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
 }
-.lottie-animation {
-  width: 150px;
-  height: 150px;
-  margin-top: 1rem;
-}
-
-/* Featured Carousel */
-.featured-carousel {
-  background-color: var(--sandy-beige);
-  background-image: url('../images/patterns/traditional-motif-1.webp');
-  background-repeat: repeat;
-  padding: 2rem 0;
-}
-.featured-carousel .container {
-  padding: 0 1rem;
-}
-.featured-carousel h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.carousel-container {
+.hero-cta {
   display: flex;
   gap: 1rem;
-  overflow-x: auto;
-  padding-bottom: 1rem;
-}
-.carousel-item {
-  flex: 0 0 auto;
-  width: 300px;
-  height: 200px;
-  overflow: hidden;
-  border-radius: 8px;
-  position: relative;
-  transition: transform 0.3s ease;
-}
-.carousel-item:hover {
-  transform: scale(1.05);
-}
-.carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  justify-content: center;
 }
 
-/* Newsletter */
-.newsletter {
-  background-color: var(--muted-terracotta);
-  color: #fff;
-  text-align: center;
-  padding: 3rem 1rem;
-}
-.newsletter .container {
-  padding: 0;
-}
-.newsletter h2 {
-  margin-bottom: 1rem;
-}
-.newsletter p {
-  margin-bottom: 1rem;
-}
-.newsletter form {
-  display: inline-flex;
-  margin-top: 1rem;
-}
-.newsletter input[type="email"] {
-  padding: 0.75rem;
-  border: none;
-  border-radius: 4px 0 0 4px;
-  min-width: 250px;
-}
-.newsletter button {
+/* Buttons */
+.btn-primary,
+.btn-secondary {
   padding: 0.75rem 1.25rem;
   border: none;
+  text-decoration: none;
+  color: var(--text-light);
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.btn-primary {
+  background-color: var(--btn-primary-bg);
+}
+.btn-primary:hover {
+  background-color: #f57656; /* Slightly darker coral on hover */
+}
+.btn-secondary {
+  background-color: var(--btn-secondary-bg);
+}
+.btn-secondary:hover {
+  background-color: #222222; /* Slightly darker gray on hover */
+}
+
+/* Featured Collections */
+.featured-collections {
+  background-color: var(--cream-bg);
+  padding: 3rem 1rem;
+}
+.featured-collections h2 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.section-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0.5rem auto 2rem;
+  color: #666666;
+}
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.collection-item {
+  background-color: #ffffff;
+  border-radius: 4px;
+  text-align: center;
+  padding: 1rem;
+}
+.collection-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.collection-item h3 {
+  font-size: 1.125rem;
+  color: var(--text-dark);
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  background-color: #ffffff;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.newsletter-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.newsletter-section p {
+  margin-bottom: 1rem;
+}
+#newsletter-form {
+  display: inline-flex;
+}
+#newsletter-form input[type="email"] {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  min-width: 200px;
+}
+#newsletter-form button {
+  padding: 0.75rem 1rem;
+  border: none;
   border-radius: 0 4px 4px 0;
-  background-color: var(--primary-blue);
-  color: #fff;
+  background-color: var(--btn-primary-bg);
+  color: var(--text-light);
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.newsletter button:hover {
-  background-color: var(--accent-saffron);
-}
-
-/* Instagram Feed */
-.instagram-feed {
-  background-color: #fff;
-  padding: 2rem 0;
-}
-.instagram-feed .container {
-  padding: 0 1rem;
-}
-.instagram-feed h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-/* Product Page Styles */
-.product-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 2rem 0;
-  background-color: var(--sandy-beige);
-  background-image: url('../images/patterns/block-print-pattern-2.webp');
-  background-repeat: repeat;
-  border-radius: 8px;
-}
-.gallery-item {
-  flex: 1 1 300px;
-}
-.high-res-image img,
-.zoom-view img,
-.product-360 iframe {
-  width: 100%;
-  max-width: 100%;
-  border-radius: 8px;
-}
-.product-details,
-.meet-artisan,
-.size-guide,
-.pricing-shipping,
-.instagram-order {
-  padding: 2rem 0;
-}
-.product-details h1 {
-  margin-bottom: 0.5rem;
-}
-.product-details .price {
-  color: var(--muted-terracotta);
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-.product-details .description {
-  margin-bottom: 1.5rem;
-}
-
-/* Meet the Artisan Section */
-.meet-artisan .artisan-info {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
-}
-.artisan-info img {
-  max-width: 300px;
-  border-radius: 8px;
-  width: 100%;
-  object-fit: cover;
-}
-.artisan-details {
-  flex: 1;
-}
-.artisan-video {
-  width: 100%;
-  margin-top: 1rem;
-  border-radius: 8px;
-}
-
-/* Size Guide Table */
-.size-guide table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.size-guide th,
-.size-guide td {
-  border: 1px solid #ccc;
-  padding: 0.75rem;
-  text-align: left;
-}
-
-/* Pricing & Shipping */
-.pricing-shipping p {
-  font-size: 1.125rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Instagram Order Section */
-.instagram-order a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  background-color: var(--primary-blue);
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-}
-.instagram-order a:hover {
-  background-color: var(--accent-saffron);
-}
-.instagram-order img {
-  width: 24px;
-  height: 24px;
+#newsletter-form button:hover {
+  background-color: #f57656;
 }
 
 /* Footer */
-footer {
-  background-color: var(--primary-blue);
-  color: #fff;
+.site-footer {
+  background-color: var(--header-bg);
+  color: var(--text-light);
   padding: 1rem;
   text-align: center;
 }
-.footer-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.footer-icons {
-  margin-top: 0.5rem;
-}
-.footer-icons a img {
-  width: 24px;
-  height: 24px;
-  margin: 0 0.5rem;
-  filter: brightness(0) invert(1);
+.site-footer .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* Responsive Breakpoints */
 @media (min-width: 768px) {
+  .hero-section {
+    height: 80vh;
+  }
   .hero-overlay h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
   .hero-overlay p {
-    font-size: 1.75rem;
-  }
-  .nav-links {
-    gap: 2rem;
+    font-size: 1.25rem;
   }
 }
 @media (min-width: 1024px) {
-  .product-gallery {
-    gap: 3rem;
-  }
-  .artisan-info {
-    flex-wrap: nowrap;
-  }
-}
-@media (min-width: 1440px) {
   .hero-overlay h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 }
