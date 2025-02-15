@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="description" content="Discover our premium product crafted with traditional techniques and modern design elegance." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product Name - Jaipur Crafted Linens</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/zoom.js" defer></script>
   <!-- Structured Data for Product -->
@@ -16,7 +19,7 @@
     "image": [
       "https://www.jaipurcraftedlinens.com/assets/images/products/rajai-set-1.jpg"
     ],
-    "description": "Detailed description of product.",
+    "description": "An exquisite product crafted with traditional techniques and modern design.",
     "sku": "SKU12345",
     "offers": {
       "@type": "Offer",
@@ -30,12 +33,12 @@
 <body>
   <header>
     <nav>
-      <ul>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="product.html">Products</a></li>
       </ul>
       <div class="social-icons">
-        <a href="https://www.instagram.com/jaipurcraftedlinens" target="_blank">
+        <a href="https://www.instagram.com/Chachad_divyanka" target="_blank">
           <img src="assets/icons/instagram-icon.svg" alt="Instagram">
         </a>
         <a href="https://wa.me/yourwhatsapplink" target="_blank">
@@ -48,13 +51,13 @@
   <main>
     <!-- Product Gallery -->
     <section class="product-gallery">
-      <div class="high-res-image">
-        <img id="product-image" src="assets/images/products/rajai-set-1.jpg" alt="Rajai Set 1">
+      <div class="gallery-item high-res-image">
+        <img id="product-image" class="img-responsive" src="assets/images/products/rajai-set-1.jpg" alt="Rajai Set 1">
       </div>
-      <div class="zoom-view">
-        <!-- Zoom functionality will enhance the high-res image -->
+      <div class="gallery-item zoom-view">
+        <!-- Zoom functionality applied to the high-res image -->
       </div>
-      <div class="product-360">
+      <div class="gallery-item product-360">
         <iframe src="360-view.html" title="360 View of Product"></iframe>
       </div>
     </section>
@@ -64,12 +67,12 @@
       <h1>Product Name</h1>
       <p class="price">₹2999.00</p>
       <p class="description">
-        This exquisite product is crafted with traditional techniques and modern design aesthetics...
+        This exquisite product is crafted using time-honored techniques and reimagined with modern elegance. Every detail is designed to perfection.
       </p>
       <h2>Fabric Specifications &amp; Care Instructions</h2>
       <ul>
         <li>100% Organic Cotton</li>
-        <li>Hand-dyed with natural dyes</li>
+        <li>Hand-dyed using natural dyes</li>
         <li>Machine wash cold; tumble dry low</li>
       </ul>
     </section>
@@ -78,9 +81,9 @@
     <section class="meet-artisan">
       <h2>Meet the Artisan</h2>
       <div class="artisan-info">
-        <img src="assets/images/artisans/artisan-ramesh-sharma.jpg" alt="Artisan Ramesh Sharma">
+        <img class="img-responsive" src="assets/images/artisans/artisan-ramesh-sharma.jpg" alt="Artisan Ramesh Sharma">
         <div class="artisan-details">
-          <p>Ramesh Sharma, with over 25 years of experience, brings passion and skill to every creation. Discover his journey and the inspiration behind our unique designs.</p>
+          <p>Ramesh Sharma brings over 25 years of experience and passion to every creation. Discover the story behind our authentic designs.</p>
           <!-- Artisan process video -->
           <video controls class="artisan-video">
             <source src="assets/videos/artisan-process.mp4" type="video/mp4">
@@ -137,7 +140,7 @@
     <div class="footer-info">
       <p>&copy; 2025 Jaipur Crafted Linens. All rights reserved.</p>
       <div class="footer-icons">
-        <a href="https://www.instagram.com/jaipurcraftedlinens" target="_blank">
+        <a href="https://www.instagram.com/Chachad_divyanka" target="_blank">
           <img src="assets/icons/instagram-icon.svg" alt="Instagram">
         </a>
         <a href="https://wa.me/yourwhatsapplink" target="_blank">
