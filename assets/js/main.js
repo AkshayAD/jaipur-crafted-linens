@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     newsletterForm.addEventListener('submit', function (e) {
       e.preventDefault();
       const email = newsletterForm.elements['email'].value;
-      alert(`Thank you for subscribing with ${email}! Enjoy 10% off on your first purchase.`);
+      alert(`Thank you for subscribing with ${email}! Enjoy 10% off your first purchase.`);
       newsletterForm.reset();
     });
   }
