@@ -23,10 +23,18 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Refined Rajasthani Color Palette */
 :root {
-  --primary-blue: #2A4D69;       /* Deep, calming blue */
-  --muted-terracotta: #D1495B;   /* Muted terracotta for warmth */
-  --sandy-beige: #EDC9AF;         /* Soft, sandy beige */
-  --accent-saffron: #F4A261;      /* A hint of saffron for accents */
+  --primary-blue: #2A4D69;      /* Deep, calming blue */
+  --muted-terracotta: #D1495B;  /* Warm terracotta */
+  --sandy-beige: #EDC9AF;       /* Soft, sandy beige */
+  --accent-saffron: #F4A261;    /* Subtle saffron accent */
+  --max-width: 1200px;          /* Container max-width */
+}
+
+/* Layout Containers */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
 /* Navigation & Header */
@@ -66,7 +74,7 @@ nav {
 .hero {
   position: relative;
   overflow: hidden;
-  height: 80vh;
+  height: 100vh; /* Make hero fill the screen for a bold statement */
 }
 .hero-video {
   width: 100%;
@@ -79,22 +87,22 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(42, 77, 105, 0.5);
+  background: rgba(42, 77, 105, 0.5); /* Semi-transparent overlay */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #fff;
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
+  color: #fff;
 }
 .hero-overlay h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 .hero-overlay p {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .lottie-animation {
   width: 150px;
@@ -104,20 +112,23 @@ nav {
 
 /* Featured Carousel */
 .featured-carousel {
-  padding: 2rem;
   background-color: var(--sandy-beige);
   background-image: url('../images/patterns/traditional-motif-1.webp');
   background-repeat: repeat;
+  padding: 2rem 0;
+}
+.featured-carousel .container {
+  padding: 0 1rem;
 }
 .featured-carousel h2 {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .carousel-container {
   display: flex;
-  overflow-x: auto;
   gap: 1rem;
-  padding: 0 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
 }
 .carousel-item {
   flex: 0 0 auto;
@@ -128,28 +139,34 @@ nav {
   position: relative;
   transition: transform 0.3s ease;
 }
+.carousel-item:hover {
+  transform: scale(1.05);
+}
 .carousel-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-.carousel-item:hover {
-  transform: scale(1.05);
 }
 
 /* Newsletter */
 .newsletter {
   background-color: var(--muted-terracotta);
   color: #fff;
-  padding: 2rem;
   text-align: center;
+  padding: 3rem 1rem;
+}
+.newsletter .container {
+  padding: 0;
 }
 .newsletter h2 {
   margin-bottom: 1rem;
 }
+.newsletter p {
+  margin-bottom: 1rem;
+}
 .newsletter form {
-  margin-top: 1rem;
   display: inline-flex;
+  margin-top: 1rem;
 }
 .newsletter input[type="email"] {
   padding: 0.75rem;
@@ -172,11 +189,15 @@ nav {
 
 /* Instagram Feed */
 .instagram-feed {
-  padding: 2rem;
-  text-align: center;
+  background-color: #fff;
+  padding: 2rem 0;
+}
+.instagram-feed .container {
+  padding: 0 1rem;
 }
 .instagram-feed h2 {
-  margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 /* Product Page Styles */
@@ -184,8 +205,11 @@ nav {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  padding: 2rem;
+  padding: 2rem 0;
   background-color: var(--sandy-beige);
+  background-image: url('../images/patterns/block-print-pattern-2.webp');
+  background-repeat: repeat;
+  border-radius: 8px;
 }
 .gallery-item {
   flex: 1 1 300px;
@@ -202,7 +226,7 @@ nav {
 .size-guide,
 .pricing-shipping,
 .instagram-order {
-  padding: 2rem;
+  padding: 2rem 0;
 }
 .product-details h1 {
   margin-bottom: 0.5rem;
@@ -212,12 +236,12 @@ nav {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
+.product-details .description {
+  margin-bottom: 1.5rem;
+}
 
 /* Meet the Artisan Section */
-.meet-artisan {
-  background-color: #fff;
-}
-.artisan-info {
+.meet-artisan .artisan-info {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -295,15 +319,16 @@ footer {
   width: 24px;
   height: 24px;
   margin: 0 0.5rem;
+  filter: brightness(0) invert(1);
 }
 
 /* Responsive Breakpoints */
 @media (min-width: 768px) {
   .hero-overlay h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
   .hero-overlay p {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
   .nav-links {
     gap: 2rem;
@@ -319,13 +344,6 @@ footer {
 }
 @media (min-width: 1440px) {
   .hero-overlay h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
-}
-
-/* Utility: Responsive Images */
-.img-responsive {
-  width: 100%;
-  height: auto;
-  display: block;
 }
