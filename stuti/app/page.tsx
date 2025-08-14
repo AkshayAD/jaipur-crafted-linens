@@ -1,9 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import dynamic from "next/dynamic";
-
-const Hero = dynamic(() => import("@/components/Hero"), { ssr: false });
-const ScrollFacts = dynamic(() => import("@/components/ScrollFacts"), { ssr: false });
+import Hero from "@/components/Hero";
+import ScrollFacts from "@/components/ScrollFacts";
 
 function CTAButton({ href, children }: { href: string; children: React.ReactNode }) {
 	return (
