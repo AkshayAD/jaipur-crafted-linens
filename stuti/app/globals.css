@@ -32,6 +32,29 @@
   }
 }
 
+/* Theme attribute overrides */
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+[data-theme="sepia"] {
+  --background: #F5EFE6;
+  --foreground: #2B2B2B;
+}
+
+/* High contrast mode */
+[data-contrast="high"] {
+  --color-charcoal: #0B0F1A;
+  --foreground: var(--color-charcoal);
+}
+
+/* Reduced motion */
+[data-motion="reduced"] * {
+  animation: none !important;
+  transition: none !important;
+}
+
 * {
   box-sizing: border-box;
 }

@@ -4,6 +4,8 @@ import Hero from "@/components/Hero";
 import ScrollFacts from "@/components/ScrollFacts";
 import BentoShowcase from "@/components/BentoShowcase";
 import Marquee from "@/components/Marquee";
+import StoryScroller from "@/components/StoryScroller";
+import FabricLab from "@/components/FabricLab";
 
 function CTAButton({ href, children }: { href: string; children: React.ReactNode }) {
 	return (
@@ -53,6 +55,8 @@ export default function Home() {
 			</section>
 
 			<BentoShowcase />
+			<StoryScroller />
+			<FabricLab />
 
 			<ScrollFacts />
 
@@ -62,7 +66,7 @@ export default function Home() {
 					<p className="mt-4 text-foreground/80 leading-relaxed">We craft linens that invite slow mornings and quiet nights. Using premium, breathable percale cotton and linen, our collections are made to last and priced with honesty. We believe in texture you can feel, colors that calm, and details that matter.</p>
 				</div>
 				<div className="relative h-72 rounded-lg overflow-hidden">
-					<Image src="/images/91RYk3muZlL.jpg" alt="Fabric close-up" fill className="object-cover" />
+					<Image src="/images/91RYk3muZlL.jpg" alt="Fabric close-up" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
 				</div>
 			</section>
 
@@ -74,7 +78,7 @@ export default function Home() {
 				<div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
 					{["91RYk3muZlL.jpg","A1nSHbz9BKL._AC_UF894,1000_QL80_.jpg","images.jpeg","91RYk3muZlL.jpg"].map((img, i) => (
 						<div key={i} className="relative h-40 rounded-md overflow-hidden group">
-							<Image src={`/images/${img}`} alt="Lookbook image" fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+						<Image src={`/images/${img}`} alt="Lookbook image" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
 						</div>
 					))}
 				</div>

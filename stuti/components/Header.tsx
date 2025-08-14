@@ -3,6 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { useScroll, motion } from "framer-motion";
+import ThemeControls from "./ThemeControls";
 
 const InstagramIcon = () => (
 	<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
@@ -25,6 +27,7 @@ function classNames(...classes: Array<string | false | undefined>) {
 
 export default function Header() {
 	const [showShadow, setShowShadow] = useState(false);
+	const { scrollYProgress } = useScroll();
 
 	useEffect(() => {
 		const onScroll = () => setShowShadow(window.scrollY > 8);
@@ -66,8 +69,10 @@ export default function Header() {
 					>
 						<InstagramIcon /> <span className="hidden sm:inline">Instagram</span>
 					</Link>
+					<ThemeControls />
 				</div>
 			</div>
+			<motion.div className="h-[2px] bg-primary/60" style={{ scaleX: scrollYProgress, transformOrigin: "0% 50%" }} />
 		</header>
 	);
 }
