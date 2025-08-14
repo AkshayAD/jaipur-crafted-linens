@@ -1,5 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const Hero = dynamic(() => import("@/components/Hero"), { ssr: false });
+const ScrollFacts = dynamic(() => import("@/components/ScrollFacts"), { ssr: false });
 
 function CTAButton({ href, children }: { href: string; children: React.ReactNode }) {
 	return (
@@ -15,28 +19,7 @@ function CTAButton({ href, children }: { href: string; children: React.ReactNode
 export default function Home() {
 	return (
 		<div className="flex flex-col">
-			<section className="relative h-[80vh] w-full overflow-hidden rounded-none">
-				<div className="absolute inset-0">
-					<Image
-						src="/images/91RYk3muZlL.jpg"
-						alt="Serene bed with soft natural light"
-						fill
-						className="object-cover"
-						priority
-					/>
-					<div className="absolute inset-0 bg-black/15" />
-				</div>
-				<div className="relative container h-full flex flex-col items-start justify-end pb-16">
-					<h1 className="h-serif text-4xl md:text-6xl text-white max-w-3xl leading-tight">Stuti. Where comfort finds a home.</h1>
-					<p className="mt-4 text-white/90 max-w-xl">Accessible luxury linens crafted in premium percale cotton and linen, designed to bring calm to modern living.</p>
-					<div className="mt-6 flex gap-3">
-						<CTAButton href="/collections">Explore Collections</CTAButton>
-						<Link href="/lookbook" className="inline-flex items-center justify-center rounded-full border border-white/70 text-white px-6 py-3 text-sm tracking-wide hover:bg-white/10">
-							View Lookbook
-						</Link>
-					</div>
-				</div>
-			</section>
+			<Hero />
 
 			<section className="container mt-16">
 				<h2 className="h-serif text-2xl md:text-3xl">Featured Collections</h2>
@@ -67,6 +50,8 @@ export default function Home() {
 					</Link>
 				</div>
 			</section>
+
+			<ScrollFacts />
 
 			<section className="container mt-16 grid md:grid-cols-2 gap-8 items-center">
 				<div>
