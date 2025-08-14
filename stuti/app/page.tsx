@@ -7,6 +7,13 @@ import Marquee from "@/components/Marquee";
 import StoryScroller from "@/components/StoryScroller";
 import FabricLab from "@/components/FabricLab";
 import Magnetic from "@/components/Magnetic";
+import ProductCard from "@/components/ProductCard";
+import ScrollProgress from "@/components/ScrollProgress";
+import StatsSection from "@/components/StatsSection";
+import InteractiveGallery from "@/components/InteractiveGallery";
+import StickyNav from "@/components/StickyNav";
+import ShimmerButton from "@/components/ShimmerButton";
+import TestimonialCard from "@/components/TestimonialCard";
 
 function CTAButton({ href, children }: { href: string; children: React.ReactNode }) {
 	return (
@@ -20,38 +27,83 @@ function CTAButton({ href, children }: { href: string; children: React.ReactNode
 }
 
 export default function Home() {
+	const sections = [
+		{ id: "hero", label: "Home", href: "#hero" },
+		{ id: "collections", label: "Collections", href: "#collections" },
+		{ id: "stats", label: "Stats", href: "#stats" },
+		{ id: "gallery", label: "Gallery", href: "#gallery" },
+		{ id: "testimonials", label: "Reviews", href: "#testimonials" }
+	];
+
+	const stats = [
+		{ value: 500, label: "Happy Customers", suffix: "+" },
+		{ value: 15, label: "Years of Craft", suffix: "+" },
+		{ value: 98, label: "Satisfaction Rate", suffix: "%" },
+		{ value: 24, label: "Hour Support", suffix: "h" }
+	];
+
+	const galleryImages = [
+		{ src: "/images/91RYk3muZlL.jpg", alt: "Bedroom setup", title: "Serene Bedroom", description: "Perfect for peaceful sleep" },
+		{ src: "/images/A1nSHbz9BKL._AC_UF894,1000_QL80_.jpg", alt: "Linen collection", title: "Linen Collection", description: "Natural texture and comfort" },
+		{ src: "/images/images.jpeg", alt: "Percale sheets", title: "Percale Sheets", description: "Crisp and breathable" },
+		{ src: "/images/91RYk3muZlL.jpg", alt: "Bedroom detail", title: "Bedroom Detail", description: "Attention to every detail" }
+	];
+
+	const testimonials = [
+		{
+			quote: "The quality of these linens is exceptional. They've transformed my sleep experience completely.",
+			author: "Sarah Johnson",
+			role: "Interior Designer",
+			rating: 5
+		},
+		{
+			quote: "Finally found linens that are both beautiful and practical. The percale weave is perfect for our climate.",
+			author: "Michael Chen",
+			role: "Architect",
+			rating: 5
+		},
+		{
+			quote: "Stuti has exceeded all my expectations. The attention to detail and customer service is outstanding.",
+			author: "Emma Rodriguez",
+			role: "Homeowner",
+			rating: 5
+		}
+	];
+
 	return (
 		<div className="flex flex-col">
-			<Hero />
+			<ScrollProgress />
+			<StickyNav sections={sections} />
+			
+			<section id="hero">
+				<Hero />
+			</section>
+			
 			<Marquee />
 
-			<section className="container mt-16">
+			<section id="collections" className="container mt-16">
 				<h2 className="h-serif text-2xl md:text-3xl">Featured Collections</h2>
 				<div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-					<Link href="/collections/percale" className="group relative overflow-hidden rounded-lg bg-secondary/10 will-change-transform">
-					<Image src="/images/images.jpeg" alt="Percale collection" width={800} height={600} sizes="(max-width: 768px) 100vw, 33vw" className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-						<div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-						<div className="absolute bottom-3 left-3 text-white">
-							<div className="h-serif text-xl">The Percale Edit</div>
-							<p className="text-sm text-white/90">Crisp, cool, and endlessly breathable</p>
-						</div>
-					</Link>
-					<Link href="/collections/linen" className="group relative overflow-hidden rounded-lg bg-accent/10 will-change-transform">
-					<Image src="/images/A1nSHbz9BKL._AC_UF894,1000_QL80_.jpg" alt="Linen collection" width={800} height={600} sizes="(max-width: 768px) 100vw, 33vw" className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-						<div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-						<div className="absolute bottom-3 left-3 text-white">
-							<div className="h-serif text-xl">The Linen Collection</div>
-							<p className="text-sm text-white/90">Naturally textured, effortlessly luxurious</p>
-						</div>
-					</Link>
-					<Link href="/collections" className="group relative overflow-hidden rounded-lg bg-secondary/10 will-change-transform">
-						<div className="h-64 w-full flex items-center justify-center text-center">
-							<div>
-								<div className="h-serif text-xl">See All</div>
-								<p className="text-sm text-foreground/70">Explore colors, textures, and sets</p>
-							</div>
-						</div>
-					</Link>
+					<ProductCard
+						href="/collections/percale"
+						image="/images/images.jpeg"
+						title="The Percale Edit"
+						description="Crisp, cool, and endlessly breathable"
+						badge="Best Seller"
+					/>
+					<ProductCard
+						href="/collections/linen"
+						image="/images/A1nSHbz9BKL._AC_UF894,1000_QL80_.jpg"
+						title="The Linen Collection"
+						description="Naturally textured, effortlessly luxurious"
+						badge="New"
+					/>
+					<ProductCard
+						href="/collections"
+						image="/images/91RYk3muZlL.jpg"
+						title="See All Collections"
+						description="Explore colors, textures, and sets"
+					/>
 				</div>
 			</section>
 
@@ -61,13 +113,42 @@ export default function Home() {
 
 			<ScrollFacts />
 
+			<section id="stats">
+				<StatsSection
+					stats={stats}
+					title="Our Impact"
+					description="Trusted by thousands of customers for quality and comfort"
+				/>
+			</section>
+
+			<section id="gallery" className="container mt-16">
+				<InteractiveGallery
+					images={galleryImages}
+					title="Our Collections"
+				/>
+			</section>
+
 			<section className="container mt-16 grid md:grid-cols-2 gap-8 items-center">
 				<div>
 					<h2 className="h-serif text-2xl md:text-3xl">Our Philosophy</h2>
 					<p className="mt-4 text-foreground/80 leading-relaxed">We craft linens that invite slow mornings and quiet nights. Using premium, breathable percale cotton and linen, our collections are made to last and priced with honesty. We believe in texture you can feel, colors that calm, and details that matter.</p>
+					<div className="mt-6">
+						<ShimmerButton variant="primary" size="lg">
+							Learn More About Our Story
+						</ShimmerButton>
+					</div>
 				</div>
 				<div className="relative h-72 rounded-lg overflow-hidden">
 					<Image src="/images/91RYk3muZlL.jpg" alt="Fabric close-up" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+				</div>
+			</section>
+
+			<section id="testimonials" className="container mt-16">
+				<h2 className="h-serif text-2xl md:text-3xl text-center mb-12">What Our Customers Say</h2>
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+					{testimonials.map((testimonial, index) => (
+						<TestimonialCard key={index} testimonial={testimonial} index={index} />
+					))}
 				</div>
 			</section>
 

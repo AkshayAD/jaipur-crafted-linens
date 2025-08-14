@@ -31,7 +31,7 @@ export default function Hero() {
 		</div>
 		<div className="relative container h-full flex flex-col items-start justify-end pb-16">
 			<motion.h1
-				className="h-serif text-4xl md:text-6xl text-white max-w-3xl leading-tight drop-shadow-xl"
+				className="h-serif text-4xl md:text-6xl text-white max-w-3xl leading-tight drop-shadow-xl mix-blend-difference"
 				initial={{ y: 16, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				transition={{ duration: 0.6, ease: "easeOut" }}
@@ -39,7 +39,7 @@ export default function Hero() {
 				Stuti. Where comfort finds a home.
 			</motion.h1>
 			<motion.p
-				className="mt-4 text-white/95 max-w-xl drop-shadow"
+				className="mt-4 text-white/95 max-w-xl drop-shadow mix-blend-difference"
 				initial={{ y: 16, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
