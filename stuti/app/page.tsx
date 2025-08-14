@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import ScrollFacts from "@/components/ScrollFacts";
+import BentoShowcase from "@/components/BentoShowcase";
+import Marquee from "@/components/Marquee";
 
 function CTAButton({ href, children }: { href: string; children: React.ReactNode }) {
 	return (
@@ -18,6 +20,7 @@ export default function Home() {
 	return (
 		<div className="flex flex-col">
 			<Hero />
+			<Marquee />
 
 			<section className="container mt-16">
 				<h2 className="h-serif text-2xl md:text-3xl">Featured Collections</h2>
@@ -48,6 +51,8 @@ export default function Home() {
 					</Link>
 				</div>
 			</section>
+
+			<BentoShowcase />
 
 			<ScrollFacts />
 
