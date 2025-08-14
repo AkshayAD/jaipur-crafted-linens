@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --color-cream: #F8F7F4;
+  --color-sage: #B2BBA2;
+  --color-rose: #D8C2BF;
+  --color-charcoal: #36454F;
+  --color-terracotta: #E2725B;
+  --color-gold: #D4AF37;
+
+  --background: var(--color-cream);
+  --foreground: var(--color-charcoal);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--color-terracotta);
+  --color-secondary: var(--color-sage);
+  --color-accent: var(--color-rose);
+  --color-ink: var(--color-charcoal);
+
+  --font-sans: var(--font-montserrat);
+  --font-serif: var(--font-lora);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.a11y-skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: white;
+  padding: 8px 12px;
+  z-index: 50;
+}
+.a11y-skip-link:focus {
+  top: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Utility for serif headings */
+.h-serif {
+  font-family: var(--font-lora), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/* Smooth page transitions base */
+.page-fade-enter {
+  opacity: 0;
+}
+.page-fade-enter-active {
+  opacity: 1;
+  transition: opacity 400ms ease;
+}
+.page-fade-exit {
+  opacity: 1;
+}
+.page-fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
