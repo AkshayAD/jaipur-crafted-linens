@@ -19,8 +19,9 @@ const DATA: Record<string, { title: string; products: Array<{ slug: string; name
 	},
 };
 
-export default function CollectionPage({ params }: { params: { slug: string } }) {
-	const collection = DATA[params.slug];
+export default async function CollectionPage({ params }: { params: Promise<{ slug: string }> }) {
+	const { slug } = await params;
+	const collection = DATA[slug];
 	if (!collection) return notFound();
 	return (
 		<div className="container py-10">

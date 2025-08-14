@@ -1,7 +1,5 @@
-"use client";
-
-import Image from "next/image";
-import { useMemo, useState } from "react";
+import ProductGallery from "@/components/ProductGallery";
+import { notFound } from "next/navigation";
 
 const PRODUCTS: Record<string, { name: string; color: string; images: string[]; material: string; size: string; care: string } > = {
 	"percale-white": {
@@ -38,30 +36,20 @@ const PRODUCTS: Record<string, { name: string; color: string; images: string[]; 
 	},
 };
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
-	const product = PRODUCTS[params.slug];
-	const [active, setActive] = useState(0);
-	const waLink = useMemo(() => {
-		if (!product) return "#";
+export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+	const { slug } = await params;
+	const product = PRODUCTS[slug];
+	if (!product) return notFound();
+	const waLink = (() => {
 		const base = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "0000000000"}`;
 		const text = encodeURIComponent(`Hi Stuti, I'm interested in the ${product.name} (${product.color}).`);
 		return `${base}?text=${text}`;
-	}, [product]);
+	})();
 
-	if (!product) return null;
 	return (
 		<div className="container py-10 grid md:grid-cols-2 gap-10">
 			<div>
-				<div className="relative w-full h-[440px] overflow-hidden rounded-lg">
-					<Image src={product.images[active]} alt={product.name} fill className="object-cover" />
-				</div>
-				<div className="mt-3 grid grid-cols-5 gap-2">
-					{product.images.map((src, i) => (
-						<button key={i} onClick={() => setActive(i)} className={`relative h-20 rounded-md overflow-hidden border ${active===i?"border-primary":"border-transparent"}`}>
-							<Image src={src} alt={`${product.name} ${i+1}`} fill className="object-cover" />
-						</button>
-					))}
-				</div>
+				<ProductGallery images={product.images} name={product.name} />
 			</div>
 			<div>
 				<h1 className="h-serif text-3xl md:text-4xl">{product.name}</h1>
