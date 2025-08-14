@@ -63,7 +63,12 @@ export default function Hero() {
 				animate={{ y: 0, opacity: 1 }}
 				transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
 			>
-				Accessible luxury linens crafted in premium percale cotton and linen, designed to bring calm to modern living.
+				<span className="relative">
+					Accessible luxury linens crafted in premium percale cotton and linen, designed to bring calm to modern living.
+					<span className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/30 to-primary/20 rounded-lg blur-sm -z-10"></span>
+					<span className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/20 to-primary/10 rounded-lg -z-10"></span>
+					<span className="absolute -inset-1 bg-gradient-to-r from-primary/40 via-primary/60 to-primary/40 rounded-lg blur opacity-20 animate-pulse"></span>
+				</span>
 			</motion.p>
 			<motion.div
 				className="mt-6 flex gap-3"
