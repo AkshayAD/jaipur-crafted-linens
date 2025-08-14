@@ -17,6 +17,18 @@ export default function OurStoryPage() {
 					</ul>
 				</div>
 			</div>
+
+			<div className="mt-12 grid md:grid-cols-2 gap-8">
+				<div className="space-y-3">
+					<h2 className="h-serif text-2xl">A brief history of percale and linen</h2>
+					<p className="text-sm text-foreground/75">Percale traces its roots to the Persian word "pargālah" and rose to prominence in 19th-century Europe for its crisp, cool handfeel. Linen, spun from flax, is among humanity’s oldest textiles — prized for breathability and tensile strength since ancient Egypt.</p>
+				</div>
+				<ol className="space-y-2 text-sm text-foreground/80">
+					<li>• 1830s: Percale production scales in France and Portugal</li>
+					<li>• 1920s: Linen becomes a staple of warm-weather bedding</li>
+					<li>• Today: Blends and refined weaves make both more durable than ever</li>
+				</ol>
+			</div>
 		</div>
 	);
 }

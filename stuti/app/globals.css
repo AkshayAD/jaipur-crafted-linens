@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --color-cream: #F8F7F4;
-  --color-sage: #B2BBA2;
+  /* Refined palette for better contrast and modern warmth */
+  --color-cream: #FAF8F6;
+  --color-sage: #A9B89D;
   --color-rose: #D8C2BF;
-  --color-charcoal: #36454F;
-  --color-terracotta: #E2725B;
-  --color-gold: #D4AF37;
+  --color-charcoal: #1F2937;
+  --color-terracotta: #DB5E4A;
+  --color-gold: #CBA861;
 
   --background: var(--color-cream);
   --foreground: var(--color-charcoal);
@@ -31,6 +32,29 @@
   }
 }
 
+/* Theme attribute overrides */
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+[data-theme="sepia"] {
+  --background: #F5EFE6;
+  --foreground: #2B2B2B;
+}
+
+/* High contrast mode */
+[data-contrast="high"] {
+  --color-charcoal: #0B0F1A;
+  --foreground: var(--color-charcoal);
+}
+
+/* Reduced motion */
+[data-motion="reduced"] * {
+  animation: none !important;
+  transition: none !important;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -44,6 +68,11 @@ body {
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: color-mix(in lab, var(--color-primary) 22%, #ffffff 78%);
+  color: var(--color-ink);
 }
 
 .a11y-skip-link {
@@ -71,6 +100,28 @@ body {
 /* Utility for serif headings */
 .h-serif {
   font-family: var(--font-lora), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/* Modern surface utilities */
+.soft-shadow {
+  box-shadow: 0 10px 30px -12px rgba(17, 24, 39, 0.22), 0 6px 18px -14px rgba(17, 24, 39, 0.16);
+}
+.glass {
+  background: color-mix(in lab, var(--color-background) 70%, #ffffff 30%);
+  backdrop-filter: blur(10px);
+  border: 1px solid color-mix(in lab, var(--color-foreground) 10%, #ffffff 90%);
+}
+.rounded-2xl { border-radius: 1rem; }
+.gradient-border {
+  position: relative;
+}
+.gradient-border:before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(120deg, var(--color-primary), var(--color-gold));
+  z-index: -1;
 }
 
 /* Smooth page transitions base */

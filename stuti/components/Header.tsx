@@ -1,7 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
+import { useScroll, motion } from "framer-motion";
+import ThemeControls from "./ThemeControls";
 
 const InstagramIcon = () => (
 	<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
@@ -24,6 +27,7 @@ function classNames(...classes: Array<string | false | undefined>) {
 
 export default function Header() {
 	const [showShadow, setShowShadow] = useState(false);
+	const { scrollYProgress } = useScroll();
 
 	useEffect(() => {
 		const onScroll = () => setShowShadow(window.scrollY > 8);
@@ -38,7 +42,9 @@ export default function Header() {
 			showShadow && "shadow-sm"
 		)}>
 			<div className="container flex items-center justify-between py-3">
-				<div className="text-xl h-serif tracking-wide"><Link href="/">Stuti</Link></div>
+				<Link href="/" className="flex items-center gap-2" aria-label="Stuti home">
+					<Image src="/stuti-logo.svg" alt="Stuti" width={96} height={32} priority />
+				</Link>
 				<nav className="hidden md:flex items-center gap-8 text-sm">
 					<Link href="/collections" className="hover:text-primary transition-colors">Collections</Link>
 					<Link href="/our-story" className="hover:text-primary transition-colors">Our Story</Link>
@@ -46,7 +52,7 @@ export default function Header() {
 				</nav>
 				<div className="flex items-center gap-4">
 					<Link
-						href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "0000000000"}`}
+						href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "9657546747"}`}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 border border-foreground/15 hover:bg-primary hover:text-white transition-colors"
@@ -55,7 +61,7 @@ export default function Header() {
 						<WhatsAppIcon /> <span className="hidden sm:inline">WhatsApp</span>
 					</Link>
 					<Link
-						href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://instagram.com/"}
+						href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://www.instagram.com/chachad_divyanka/"}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 border border-foreground/15 hover:bg-foreground hover:text-background transition-colors"
@@ -63,8 +69,10 @@ export default function Header() {
 					>
 						<InstagramIcon /> <span className="hidden sm:inline">Instagram</span>
 					</Link>
+					<ThemeControls />
 				</div>
 			</div>
+			<motion.div className="h-[2px] bg-primary/60" style={{ scaleX: scrollYProgress, transformOrigin: "0% 50%" }} />
 		</header>
 	);
 }

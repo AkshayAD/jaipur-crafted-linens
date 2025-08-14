@@ -41,7 +41,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 	const product = PRODUCTS[slug];
 	if (!product) return notFound();
 	const waLink = (() => {
-		const base = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "0000000000"}`;
+		const base = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "9657546747"}`;
 		const text = encodeURIComponent(`Hi Stuti, I'm interested in the ${product.name} (${product.color}).`);
 		return `${base}?text=${text}`;
 	})();
@@ -74,7 +74,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 				</div>
 				<div className="mt-8 flex gap-3">
 					<a href={waLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full bg-primary text-white px-6 py-3 text-sm tracking-wide hover:opacity-95">Order on WhatsApp</a>
-					<a href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://instagram.com/"} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full border border-foreground/30 px-6 py-3 text-sm tracking-wide hover:bg-foreground hover:text-background">Inquire on Instagram</a>
+					<a href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://www.instagram.com/chachad_divyanka/"} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full border border-foreground/30 px-6 py-3 text-sm tracking-wide hover:bg-foreground hover:text-background">Inquire on Instagram</a>
 				</div>
 			</div>
 		</div>
