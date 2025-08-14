@@ -2,32 +2,32 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import dynamic from "next/dynamic";
+const Hero3D = dynamic(() => import("./Hero3D"), { ssr: false });
 
 export default function Hero() {
+	const ref = useRef<HTMLDivElement | null>(null);
+	const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+	const yImg = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
+	const yGlow = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 	return (
-		<section className="relative h-[86vh] w-full overflow-hidden rounded-none">
+		<section ref={ref} className="relative h-[86vh] w-full overflow-hidden rounded-none">
 			<div className="absolute inset-0">
-				<Image
-					src="/images/91RYk3muZlL.jpg"
-					alt="Serene bed with soft natural light"
-					fill
-					className="object-cover"
-					priority
-				/>
+				<Hero3D />
+				<motion.div style={{ y: yImg }} className="absolute inset-0">
+					<Image
+						src="/images/91RYk3muZlL.jpg"
+						alt="Serene bed with soft natural light"
+						fill
+						className="object-cover"
+						priority
+					/>
+				</motion.div>
 				<div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/15 to-transparent" />
-				<motion.div
-					className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-primary/30 blur-3xl"
-					initial={{ opacity: 0, scale: 0.8 }}
-					animate={{ opacity: 0.85, scale: 1 }}
-					transition={{ duration: 1.2, ease: "easeOut" }}
-			/>
-			<motion.div
-				className="absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-accent/30 blur-3xl"
-				initial={{ opacity: 0, scale: 0.8 }}
-				animate={{ opacity: 0.75, scale: 1 }}
-				transition={{ duration: 1.4, ease: "easeOut", delay: 0.1 }}
-			/>
+				<motion.div style={{ y: yGlow }} className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-primary/30 blur-3xl"/>
+				<motion.div style={{ y: yGlow }} className="absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-accent/30 blur-3xl"/>
 		</div>
 		<div className="relative container h-full flex flex-col items-start justify-end pb-16">
 			<motion.h1

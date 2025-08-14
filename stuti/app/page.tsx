@@ -6,6 +6,7 @@ import BentoShowcase from "@/components/BentoShowcase";
 import Marquee from "@/components/Marquee";
 import StoryScroller from "@/components/StoryScroller";
 import FabricLab from "@/components/FabricLab";
+import Magnetic from "@/components/Magnetic";
 
 function CTAButton({ href, children }: { href: string; children: React.ReactNode }) {
 	return (
@@ -27,23 +28,23 @@ export default function Home() {
 			<section className="container mt-16">
 				<h2 className="h-serif text-2xl md:text-3xl">Featured Collections</h2>
 				<div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-					<Link href="/collections/percale" className="group relative overflow-hidden rounded-lg bg-secondary/10">
-						<Image src="/images/images.jpeg" alt="Percale collection" width={800} height={600} className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+					<Link href="/collections/percale" className="group relative overflow-hidden rounded-lg bg-secondary/10 will-change-transform">
+					<Image src="/images/images.jpeg" alt="Percale collection" width={800} height={600} sizes="(max-width: 768px) 100vw, 33vw" className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
 						<div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
 						<div className="absolute bottom-3 left-3 text-white">
 							<div className="h-serif text-xl">The Percale Edit</div>
 							<p className="text-sm text-white/90">Crisp, cool, and endlessly breathable</p>
 						</div>
 					</Link>
-					<Link href="/collections/linen" className="group relative overflow-hidden rounded-lg bg-accent/10">
-						<Image src="/images/A1nSHbz9BKL._AC_UF894,1000_QL80_.jpg" alt="Linen collection" width={800} height={600} className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+					<Link href="/collections/linen" className="group relative overflow-hidden rounded-lg bg-accent/10 will-change-transform">
+					<Image src="/images/A1nSHbz9BKL._AC_UF894,1000_QL80_.jpg" alt="Linen collection" width={800} height={600} sizes="(max-width: 768px) 100vw, 33vw" className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
 						<div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
 						<div className="absolute bottom-3 left-3 text-white">
 							<div className="h-serif text-xl">The Linen Collection</div>
 							<p className="text-sm text-white/90">Naturally textured, effortlessly luxurious</p>
 						</div>
 					</Link>
-					<Link href="/collections" className="group relative overflow-hidden rounded-lg bg-secondary/10">
+					<Link href="/collections" className="group relative overflow-hidden rounded-lg bg-secondary/10 will-change-transform">
 						<div className="h-64 w-full flex items-center justify-center text-center">
 							<div>
 								<div className="h-serif text-xl">See All</div>
