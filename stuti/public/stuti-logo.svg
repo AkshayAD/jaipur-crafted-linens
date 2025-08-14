@@ -1,16 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 32" width="144" height="48" role="img" aria-label="Stuti logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 72" width="208" height="58" role="img" aria-label="Stuti logo">
   <defs>
     <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0%" stop-color="#E2725B"/>
       <stop offset="100%" stop-color="#D4AF37"/>
     </linearGradient>
+    <style>
+      .word{font-family:'Lora',ui-serif,Georgia,serif;font-weight:600;letter-spacing:.5px}
+      .sub{font-family:'Montserrat',ui-sans-serif,system-ui,sans-serif;font-weight:500;letter-spacing:.22em}
+    </style>
   </defs>
-  <g fill="none" stroke="url(#g)" stroke-width="2">
-    <path d="M14 6c-6 0-10 3.2-10 7 0 6 8 6.2 12 8 2.4 1.1 2.8 2.3 2.8 3.4 0 1.8-1.6 3.6-5.8 3.6-3 0-5.6-1-7.5-2.3"/>
-    <path d="M32 24V8m0 16c0 2 1.4 3 3.4 3 2 0 3.6-1 3.6-3V8"/>
-    <path d="M46 24V14m0-6v2m0 0c.8-.9 2.1-2 4.2-2 2.8 0 4.8 2 4.8 5v11"/>
-    <path d="M60 24V14m0-6v2m0 0c.8-.9 2.1-2 4.2-2 2.8 0 4.8 2 4.8 5v11"/>
-    <path d="M77 17c0-5 3.4-9 8.2-9 4.8 0 8.8 4 8.8 9s-4 9-8.8 9c-2.6 0-4.9-1.3-6.4-3.2"/>
+
+  <!-- Soft circle accent echoing thread/ring motif -->
+  <circle cx="28" cy="24" r="10" fill="url(#g)" opacity="0.18"/>
+  <circle cx="28" cy="24" r="6" fill="url(#g)" opacity="0.32"/>
+
+  <!-- Wordmark -->
+  <g fill="url(#g)">
+    <text x="52" y="34" class="word" font-size="34">Stuti</text>
   </g>
+
+  <!-- Bilingual mark (Hindi) -->
+  <g fill="#36454F" opacity="0.9">
+    <text x="54" y="54" class="sub" font-size="12">स्तुति</text>
+  </g>
+
+  <!-- Calm baseline underline -->
+  <rect x="52" y="58" width="90" height="2" fill="#B2BBA2" opacity="0.6" rx="1"/>
 </svg>
 
