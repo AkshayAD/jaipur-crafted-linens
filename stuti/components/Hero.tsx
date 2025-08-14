@@ -31,7 +31,17 @@ export default function Hero() {
 		</div>
 		<div className="relative container h-full flex flex-col items-start justify-end pb-16">
 			<motion.h1
-				className="h-serif text-4xl md:text-6xl text-white max-w-3xl leading-tight drop-shadow-xl mix-blend-difference"
+				className="h-serif text-4xl md:text-6xl text-white max-w-3xl leading-tight font-bold"
+				style={{
+					textShadow: `
+						-1px -1px 0 rgba(0,0,0,0.8),
+						1px -1px 0 rgba(0,0,0,0.8),
+						-1px 1px 0 rgba(0,0,0,0.8),
+						1px 1px 0 rgba(0,0,0,0.8),
+						0 0 20px rgba(0,0,0,0.5),
+						0 0 40px rgba(0,0,0,0.3)
+					`
+				}}
 				initial={{ y: 16, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				transition={{ duration: 0.6, ease: "easeOut" }}
@@ -39,7 +49,16 @@ export default function Hero() {
 				Stuti. Where comfort finds a home.
 			</motion.h1>
 			<motion.p
-				className="mt-4 text-white/95 max-w-xl drop-shadow mix-blend-difference"
+				className="mt-4 text-white max-w-xl font-medium"
+				style={{
+					textShadow: `
+						-1px -1px 0 rgba(0,0,0,0.7),
+						1px -1px 0 rgba(0,0,0,0.7),
+						-1px 1px 0 rgba(0,0,0,0.7),
+						1px 1px 0 rgba(0,0,0,0.7),
+						0 0 15px rgba(0,0,0,0.4)
+					`
+				}}
 				initial={{ y: 16, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
@@ -52,8 +71,31 @@ export default function Hero() {
 				animate={{ y: 0, opacity: 1 }}
 				transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
 			>
-				<Link href="/collections" className="inline-flex items-center justify-center rounded-full bg-primary text-white px-6 py-3 text-sm tracking-wide hover:opacity-95 soft-shadow gradient-border">Explore Collections</Link>
-				<Link href="/lookbook" className="inline-flex items-center justify-center rounded-full glass text-white px-6 py-3 text-sm tracking-wide hover:bg-white/10">View Lookbook</Link>
+				<Link 
+					href="/collections" 
+					className="inline-flex items-center justify-center rounded-full bg-primary text-white px-6 py-3 text-sm tracking-wide hover:opacity-95 font-medium shadow-lg"
+					style={{
+						boxShadow: `
+							0 4px 15px rgba(226, 114, 91, 0.4),
+							0 0 0 1px rgba(255,255,255,0.1)
+						`
+					}}
+				>
+					Explore Collections
+				</Link>
+				<Link 
+					href="/lookbook" 
+					className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm tracking-wide font-medium backdrop-blur-sm"
+					style={{
+						backgroundColor: 'rgba(255,255,255,0.15)',
+						border: '1px solid rgba(255,255,255,0.3)',
+						color: 'white',
+						textShadow: '0 1px 3px rgba(0,0,0,0.5)',
+						boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+					}}
+				>
+					View Lookbook
+				</Link>
 			</motion.div>
 		</div>
 	</section>
